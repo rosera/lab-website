@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Serverless Toolbox cloud run app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Rich Rose",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosera/cloud-hero-landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rosera/cloud-hero-landing-page/issues"
+  },
+  "homepage": "https://github.com/rosera/cloud-hero-landing-page#readme"
+}
