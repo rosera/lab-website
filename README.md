@@ -16,7 +16,7 @@ Update the example landing page to accept custom fields:
 | url   | https://richrose.dev |
 | code  | secretpassword |
 | tagline | Welcome to your workshop |
-| assistance | Assistants for the workshop: |
+| assistance | Assistants for the workshop |
 | trainers  | List of trainers |
 | teams | List of teams |
 
