@@ -45,20 +45,7 @@ app.get('', async (req, res) => {
 
 
 async function getInformation(testUrl) {
-//  const options = {
-//    method: 'GET',
-//    headers: {
-//      'X-RapidAPI-Host': 'famous-quotes4.p.rapidapi.com',
-//      'X-RapidAPI-Key': 'your-rapidapi-key'
-//  }
-//  fetch(url, options)
-//  fetch(url)
-//      .then(res => res.json())
-//      .then(json => console.log(json))
-//      .catch(err => console.error('error:' + err));
-//
   try {
-    //let response = await fetch(url, options);
     let response = await fetch(url);
     response = await response.json();
     console.log(response);
