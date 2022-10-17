@@ -6,34 +6,10 @@ const app = express();
 const pathPublicDirectory = path.join(__dirname, './public'); 
 const pathViews = path.join(__dirname, '/views');
 const pathPartials = path.join(__dirname, '/partials');
-
-// Set as environment variables
-
-// Hackathon specific detail
-const hackathon = {
-  organization: "Google Cloud", 
-  title: "Hack. The. Cloud.", 
-  url: "https://googlesolution.qwiklabs.com",
-  code: "password01",
-  tagline: "Welcome to your Google Cloud hackathon. The environment is setup and ready to go. Your account has been provisioned and is ready for you to login.",
-  assistance: "During the Hackathon, you can get assistance from your faciliators:",
-  trainers: [
-    {
-      name: "Sandip Datta"
-    }, 
-    {
-      name: "Gary Harmson"
-    }
-  ],
-  teams: [
-    {
-      name: "Team A"
-    }, 
-    {
-      name: "Team B"
-    }
-  ],
-};
+const url = process.env.URL || 'https://storage.googleapis.com/spl-api/test.json'
+ 
+const fetch = (...args) =>
+    import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 // Set hbs as the template engine
 app.set('view engine', 'hbs');
@@ -47,7 +23,11 @@ app.use(express.static(pathPublicDirectory));
 const port = process.env.PORT || 8080;
 
 // Render the web page with parameters
-app.get('', (req, res) => {
+app.get('', async (req, res) => {
+
+  // HTTP GET: Remote configuration file 
+  let hackathon = await getInformation(url)
+  
   // Render the HBS template
   res.render('hack', 
     {
@@ -62,6 +42,33 @@ app.get('', (req, res) => {
       teams:hackathon.teams
     });
 })
+
+
+async function getInformation(testUrl) {
+//  const options = {
+//    method: 'GET',
+//    headers: {
+//      'X-RapidAPI-Host': 'famous-quotes4.p.rapidapi.com',
+//      'X-RapidAPI-Key': 'your-rapidapi-key'
+//  }
+//  fetch(url, options)
+//  fetch(url)
+//      .then(res => res.json())
+//      .then(json => console.log(json))
+//      .catch(err => console.error('error:' + err));
+//
+  try {
+    //let response = await fetch(url, options);
+    let response = await fetch(url);
+    response = await response.json();
+    console.log(response);
+    // res.status(200).json(response);
+    return response;
+  } catch (err) {
+    console.log(err);
+    return {};
+  }
+}
 
 // Listen on a network port
 app.listen(port, () => console.log(`Listening on:${port}`))

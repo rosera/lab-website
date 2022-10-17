@@ -1,0 +1,25 @@
+{
+  "organization": "Process Isolation", 
+  "title": "Hack. The. Cloud.", 
+  "url": "https://richrose.dev",
+  "code": "totallysecreteventcode",
+  "tagline": "The environment is setup and ready to go. Your account has been provisioned and is ready for you to login.",
+  "assistance": "During the event, you can get assistance from your faciliators:",
+  "trainers": [
+    {
+      "name": "Jack Bauer"
+    }, 
+    {
+      "name": "Sam Dingle"
+    }
+  ],
+  "teams": [
+    {
+      "name": "Team A"
+    }, 
+    {
+      "name": "Team B"
+    }
+  ]
+}
+
