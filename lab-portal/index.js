@@ -72,7 +72,6 @@ async function getObjectText(inputText) {
 
 async function getRemoteConfiguration(testUrl) {
   try {
-    //let response = await fetch(url, options);
     let response = await fetch(url);
     response = await response.json();
     console.log(response);
