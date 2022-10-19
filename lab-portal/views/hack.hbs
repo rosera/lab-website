@@ -30,11 +30,26 @@ body {
       <div data-w-id="3fd5aeb3-22da-ed60-7286-0d11f16597d3" style="opacity:0" class="content">
         <div class="name">{{ organization }} </div>
         <h1 class="tagline"><strong class="bold-text">{{ title }}</strong></h1>
+        
         <p class="bio">{{ tagline }}</p>
-        <p class="bio">{{ assistance }}</p>
+        
+       <p class="bio">Getting started... 
+       </br>
+       </br>
+       <a href="{{console}}"><button type="button" class="w-button">Open Cloud Console</button></a>
+       <ul role="list" class="list">
+         <li>Right Click on the Cloud Console button.</li>
+         <li>Then select open an Incognito window.</li>
+       </ul>
+       </p>
+
+       <p class="bio">{{ assistance }}</p>
+        
+       <p class="bio">Your Google Cloud team.</p>
         <div class="links w-row">
-          <div class="column w-col w-col-2">
-            <ul role="list" class="list w-list-unstyled">
+          <div class="column w-col w-col-4">
+            <div class="text-block-2">Facilitators</div>
+            <ul role="list" class="list">
                {{#each trainers}}
                  <li><a href="#">{{this.name}}</a></li>
                {{/each}}
@@ -42,34 +57,20 @@ body {
           </div>
         </div>
         
-        <h1>{{ teams.[1].name }}</h1>
-
-        {{#each teams}}
-          <p class="team-block-1"><a href="#">{{this.name}}</a></p>
-        {{/each}}
-        
+       <p class="bio">Allocate a Username between team members.</p>
         <div class="links w-row">
-          <div class="column w-col w-col-1">
+          <div class="column w-col w-col-4">
             <div class="text-block-2">Username</div>
-            <ul role="list" class="list w-list-unstyled">
-              <li>
-                <a href="#">studentxxxxxxx@email.com</a>
-              </li>
-              <li>
-                <a href="#">studentxxxxxxx@email.com</a>
-              </li>
-              <li>
-                <a href="#">studentxxxxxxx@email.com</a>
-              </li>
-              <li>
-                <a href="#">studentxxxxxxx@email.com</a>
-              </li>
-              <li>
-                <a href="#">studentxxxxxxx@email.com</a>
-              </li>
+            <ul role="list" class="list">
+               {{#each accounts}}
+                 <li>
+                   <a href="#">{{this.name}}</a>
+                 </li>
+               {{/each}}
             </ul>
           </div>
         </div>
+        
         <div class="credit">©2022 Google Solutions - <a href="https://googlesoltions.qwiklabs.com" target="_blank" class="credit-links">Hackathon</a> by <a href="https://cloud.google.com/training?hl=en" target="_blank" class="credit-links">Cloud Learning Services</a>
         </div>
       </div>
