@@ -7,7 +7,7 @@ const pathPublicDirectory = path.join(__dirname, './public');
 const pathViews = path.join(__dirname, '/views');
 const pathPartials = path.join(__dirname, '/partials');
 const url = process.env.URL || 'https://storage.googleapis.com/spl-api/test.json'
-const projectId = process.env.PROJECTID || '{"name": "qwiklabs-gcp-01-bd4255a49d1a"}'
+const projectId = process.env.PROJECT_ID || 'qwiklabs-gcp-01-bd4255a49d1a'
 const users = process.env.USERS || '[{"name": "user_0"}, {"name": "user_1"}, {"name": "user_3"}]'
 const providerGoogle  = process.env.PROVIDER || '{"name": "https://accounts.google.com/AddSession?service=accountsettings&sarp=1&continue=https%3A%2F%2Fconsole.cloud.google.com%2Fhome%2Fdashboard%3Fproject%3Dqwiklabs-gcp-01-bd4255a49d1a#Email=student-03-1a34a6033750@qwiklabs.net"}'
 const googleCloudSite = "https://accounts.google.com/AddSession?service=accountsettings&sarp=1&continue=https%3A%2F%2Fconsole.cloud.google.com%2Fhome%2Fdashboard%3Fproject%3D"
