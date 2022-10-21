@@ -62,6 +62,50 @@ img {
 html.w-mod-touch * {
   background-attachment: scroll !important;
 }
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.75);
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  color: white;
+}
+
+.flip-card-back {
+  background-color: transparent;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 10px;
+}
+
 .w-block {
   display: block;
 }
@@ -84,6 +128,18 @@ html.w-mod-touch * {
 .w-hidden {
   display: none;
 }
+.c-button {
+  padding: 5px 5px;
+/*  background-color: #2980b9; */
+  background-color: transparent !important;
+/*  background-color: #3898EC;*/
+  color: white; 
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
 .w-button {
   display: inline-block;
   padding: 9px 15px;
@@ -94,6 +150,11 @@ html.w-mod-touch * {
   text-decoration: none;
   cursor: pointer;
   border-radius: 0;
+  opacity: 0.5;
+
+}
+.w-button:hover {
+  opacity: 1;
 }
 input.w-button {
   -webkit-appearance: button;
@@ -264,6 +325,11 @@ ol {
   padding-left: 0;
   list-style: none;
 }
+.w-list-styled {
+  padding-left: 10px;
+  text-align: left;
+  list-style: inside;
+}
 .w-embed:before,
 .w-embed:after {
   content: " ";
@@ -321,6 +387,19 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+}
+.t-input,
+.t-select {
+  width: 85%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 12px;
+ /*  line-height: 1.428571429; */
+  color: #333333;
+ /* vertical-align: middle; */
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
 }
 .w-input,
 .w-select {
