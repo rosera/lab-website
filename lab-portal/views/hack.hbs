@@ -50,7 +50,12 @@ body {
        <p class="bio">Open the Cloud Console button using an Incognito window.</p>
        <p><a href="{{console}}"><button type="button" class="w-button">Open Cloud Console</button></a></p>
 
-       
+       <p class="bio">
+         Use the following password</br>
+         <input class="t-input" type="text" value="{{this.password}}" id="999" readonly>
+         <button type="button" class="c-button" onClick="copyText(999)"><img src="/images/clip.png" alt="Copy Text" style="width:16px;height:16px;"></button>
+       </p>
+
        {{#each accounts}}
        <div class="flip-card">
          <div class="flip-card-inner">
@@ -65,9 +70,6 @@ body {
              Copy the user account</br> 
              <input class="t-input" type="text" value="{{this.name}}" id="{{inc @index}}" readonly>
              <button type="button" class="c-button" onClick="copyText({{inc @index}})"><img src="/images/clip.png" alt="Copy Text" style="width:16px;height:16px;"></button>
-             Use the following password</br>
-             <input class="t-input" type="password" value="{{password}" id="999" readonly>
-             <button type="button" class="c-button" onClick="copyText(999)"><img src="/images/clip.png" alt="Copy Text" style="width:16px;height:16px;"></button>
            </div>
          </div>
        </div>
